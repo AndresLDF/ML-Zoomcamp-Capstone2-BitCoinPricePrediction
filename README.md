@@ -12,8 +12,7 @@ This project was devided into the following parts:
 Finance is a great part of our world, and in the last deacadate a new player has irrupted in the currency escenario: Bitcoin
 If the original propurse was intended as a currency, due to the high volatitily, it has not been employed as such. For this reason, having a predictable beheivior of the Bitcoing price would be a great advantage for the development of the currency. 
 
-Of course, I know that this is not possible with simple parameters, but it is an interesting experiment to do for ML.
-
+Of course, I know that this is not possible with simple parameters and a simple model, but it is an interesting experiment to do for ML.
 
 ## Dataset
 This project will use a datast downloaded from the cryptodownload page https://www.cryptodatadownload.com/data/bitstamp/. The employed Dataset includes information from the data set include the following elements from 2016 to 2024:
@@ -51,6 +50,16 @@ The Neural Network model can be found on the following link: [Neural Network Mod
 ### Selected Model
 The model selected was the Gradien Boosting model. It has the better performance. 
 More details on the selection and final training here: [Final Model Selection](https://github.com/AndresLDF/ML-Zoomcamp-Capstone2-BitCoinPricePrediction/blob/main/Notebooks/Final_Model_selection_and_Training.ipynb)
+
+## Train the Selected Model with your Data Set
+1. Clone this repository into your local machine
+2. Delete the Datasets in the Datasets folder
+3. Add your Dataset on the forlder Datasets and rename it to BTCEUR.csv
+4. In the root directory for your cloned project open a terminal
+5. Run the command ```python preparation.py```
+6. Delete the files in the folder Trained_Models
+7. Now run the following command in the previously opened shell ```python train.py```
+8. The models will be avialable in the folder Trained_Models
 
 ## Run the Python Files for the model in PipEnv
 1. Clone this repository into your local machine
