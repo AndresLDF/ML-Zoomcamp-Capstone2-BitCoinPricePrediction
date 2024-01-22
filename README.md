@@ -52,27 +52,24 @@ The Neural Network model can be found on the following link: [Neural Network Mod
 The model selected was the Gradien Boosting model. It has the better performance. 
 More details on the selection and final training here: [Final Model Selection](https://github.com/AndresLDF/ML-Zoomcamp-Capstone2-BitCoinPricePrediction/blob/main/Notebooks/Final_Model_selection_and_Training.ipynb)
 
-
-
-## Script for using the model
+## Run the Python Files for the model in PipEnv
 1. Clone this repository into your local machine
-2. Install the needed dependencies with  ```!pip install keras-image-helper ``` ``` !pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime ```
-3. Open your command shell
+2. Open your command shell
 4. Go to the directory where the cloned repositore was stored
-5. Open the folder "Separate Script"
-6. Open the file tensorflow_model_cs1.py and change the "url" variable to set it to the URL of the image that you would like to test case save it
-7. Run the file using ``` python tensorflow_model_cs1.py ```
+5. Run the command pipenv install
+6. Run this code ```pipenv run waitress-serve --listen=localhost:9696 predict:app```
+7. Open a second comand shell in the same folder
+8. Run the follwing code: ```python test.py```
 
-## Containerized model for use with AWS Lambda
+## Containerized model test
 To work with the selected model, you can use the image prepared to be used with AWS Lambda. To test the image you shoudl follow the follwing steps:
 1. Clone this repository into your local machine
 2. Open your command shell
 3. Go to the directory where the cloned repositore was stored
-4. Open the folder "Serverles"
-5. Be sure that Docker is working in your system and type ``` docker build -t scd:001 . ```
-6. Once the build is ready, type  c docker run -p 8080:8080 scd:001 ```
-7. Open another terminal on the folder "Serverles"
+4. Be sure that Docker is working in your system and type ``` docker build -t btcp:001 . ```
+6. Once the build is ready, type   docker run -p 9696:9696  btcp:001 ```
+7. Open another terminal on the same folder
 8. Now type ``` python test.py ```
 
-You should be able to get the console run following this steps. You can open the file test.py with an editor and chage the URL in line 5 to test differente images
+You should be able to get the console run following this steps. You can open the file test.py with an editor and chage the information used in line 6 to test different bitcoin prices
 
