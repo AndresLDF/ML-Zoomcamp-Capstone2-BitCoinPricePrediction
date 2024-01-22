@@ -2,24 +2,28 @@
 ## Welcome
 So far I have been working in two different projects related to ML, one for engineering application, and other for medical application. In this third project I would like to do something related to financial application. For this the prediction of Bitcoin price will be selected.
 
-This project was devided into the following parts:
+This project was divided  into the following parts:
 1. Why Bitcoin Price Prediction?
-2. Dataset Employed
-3. Models Differences
-4. Local Deployment of the model
+2. Dataset
+3. Data Analysis
+4. Models Tested
+5. Train the Selected Model with your Data Set
+6. Run the Python Files for the model in PipEnv
+7. Containerized model test
+
 
 ## Why Bitcoin Price Prediction?
-Finance is a great part of our world, and in the last deacadate a new player has irrupted in the currency escenario: Bitcoin
-If the original propurse was intended as a currency, due to the high volatitily, it has not been employed as such. For this reason, having a predictable beheivior of the Bitcoing price would be a great advantage for the development of the currency. 
+Finance is a great part of our world, and in the last decade a new player has erupted in the currency escenario: Bitcoin
+If the original propurse was intended as a currency, due to the high volatility, it has not been employed as such. For this reason, having a predictable behavior of the Bitcoin price would be a great advantage for the development of the currency.
 
 Of course, I know that this is not possible with simple parameters and a simple model, but it is an interesting experiment to do for ML.
 
 ## Dataset
-This project will use a datast downloaded from the cryptodownload page https://www.cryptodatadownload.com/data/bitstamp/. The employed Dataset includes information from the data set include the following elements from 2016 to 2024:
+This project will I have used a dataset downloaded from the following page: https://www.cryptodatadownload.com/data/bitstamp/. The employed Dataset includes information from the data set include the following elements from 2016 to 2024:
 
     Unix Timestamp - This is the unix timestamp or also known as "Epoch Time". Use this to convert to your local timezone
     Date - This timestamp is converted to NY EST Standard Time
-    Symbol - The symbol for which the timeseries data refers
+    Symbol - The symbol for which the time series data refers
     Open - This is the opening price of the time period
     High - This is the highest price of the time period
     Low - This is the lowest price of the time period
@@ -38,7 +42,7 @@ Basically to solve the issue of not using a model that takes all a data from rec
 
 ## Models tested
  The Following Models where Tested:
-*  Regression Tree
+*   Regression Tree
 * 	Regression Forest
 * 	Gradient Boosting
 * 	Neural Network Simple Model
@@ -54,27 +58,27 @@ More details on the selection and final training here: [Final Model Selection](h
 ## Train the Selected Model with your Data Set
 1. Clone this repository into your local machine
 2. Delete the Datasets in the Datasets folder
-3. Add your Dataset on the forlder Datasets and rename it to BTCEUR.csv
+3. Add your Dataset on the folder Datasets and rename it to BTCEUR.csv
 4. In the root directory for your cloned project open a terminal
 5. Run the command ```python preparation.py```
 6. Delete the files in the folder Trained_Models
 7. Now run the following command in the previously opened shell ```python train.py```
-8. The models will be avialable in the folder Trained_Models
+8. The models will be available in the folder Trained_Models
 
 ## Run the Python Files for the model in PipEnv
 1. Clone this repository into your local machine
 2. Open your command shell
-4. Go to the directory where the cloned repositore was stored
+4. Go to the directory where the cloned repository  was stored
 5. Run the command pipenv install
 6. Run this code ```pipenv run waitress-serve --listen=localhost:9696 predict:app```
-7. Open a second comand shell in the same folder
-8. Run the follwing code: ```python test.py```
+7. Open a second command shell in the same folder
+8. Run the following code: ```python test.py```
 
 ## Containerized model test
-To work with the selected model, you can use the image prepared to be used with AWS Lambda. To test the image you shoudl follow the follwing steps:
+To work with a containerized model, you should follow these steps:
 1. Clone this repository into your local machine
 2. Open your command shell
-3. Go to the directory where the cloned repositore was stored
+3. Go to the directory where the cloned repository was stored
 4. Be sure that Docker is working in your system and type ``` docker build -t btcp:001 . ```
 6. Once the build is ready, type   docker run -p 9696:9696  btcp:001 ```
 7. Open another terminal on the same folder
