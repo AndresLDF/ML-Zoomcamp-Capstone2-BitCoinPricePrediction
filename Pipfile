@@ -12,6 +12,8 @@ seaborn = "*"
 flask = "*"
 
 [dev-packages]
+waitress = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.9"
