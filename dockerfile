@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.9-slim
 
 RUN pip install pipenv
 
@@ -7,9 +7,11 @@ WORKDIR /app
 COPY ["Pipfile.lock", "Pipfile", "./"]
 
 RUN pipenv install --system --deploy
+RUN pip install scikit-learn==0.24.2
 
-COPY ["predict.py", "./Trained_Models/model_selected_1d.bin", "./"]
-COPY ["predict.py", "./Trained_Models/model_selected_7d.bin", "./"]
+COPY ["predict.py", "./"]
+COPY ["./Trained_Models/model_selected_1d.bin", "./Trained_Models/"]
+COPY ["./Trained_Models/model_selected_7d.bin", "./Trained_Models/"]
 
 EXPOSE 9696
 
