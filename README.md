@@ -15,7 +15,7 @@ This project was divided into the following parts:
 Finance is a great part of our world, and in the last decade a new player has erupted in the currency escenario: Bitcoin.
 In it's origins the propurse was to be a currency of normal use, but due to the high volatility, it has not been employed as such but more as value storage. For this reason, having a predictable behavior of the Bitcoin price would be a great advantage for the development of the currency, and ML could be of help for this task.
 
-I know that this is not possible with simple parameters, and a simple model, to predict a currency price as it is dependand of a lot of factors correlated to other activities and events that are not visible in the price history, but anyway it is an interesting experiment for an ML project.
+I know that this is not possible with simple parameters, and a simple model, to predict a currency price as it is dependand of a lot of factors correlated to other activities and events that are not visible in the price history, but anyway it is an interesting experiment for a ML project.
 
 ## Dataset
 This project will I have used a dataset downloaded from the following page: https://www.cryptodatadownload.com/data/bitstamp/. The employed Dataset includes information from the data set include the following elements from 2016 to 2024:
